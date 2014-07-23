@@ -1,5 +1,5 @@
 [app]
-  version: 0.1.1-SNAPSHOT
+  version: 0.1.1
   org: com.github.tkawachi
   name: hocon2json
   class: com.github.tkawachi.App
