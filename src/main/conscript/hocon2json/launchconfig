@@ -2,7 +2,7 @@
   version: 0.1.2
   org: com.github.tkawachi
   name: hocon2json
-  class: com.github.tkawachi.App
+  class: com.github.tkawachi.hocon2json.App
 [scala]
   version: 2.10.4
 [repositories]
