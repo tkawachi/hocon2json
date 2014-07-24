@@ -21,7 +21,7 @@ object App {
     val renderOption =
       if (pretty) ConfigRenderOptions.concise().setFormatted(true)
       else ConfigRenderOptions.concise()
-    val conf = ConfigFactory.parseFile(file)
+    val conf = ConfigFactory.parseFile(file).resolve()
     conf.root().render(renderOption)
   }
 
