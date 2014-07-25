@@ -32,7 +32,7 @@ object App {
 
   /** Shared by the launched version and the runnable version,
     * returns the process status code */
-  def run(args: Array[String]): Int = {
+  def run(args: Array[String]): Int = try {
     args match {
       case Array("-p", srcFileName, path) =>
         println(toJSON(new File(srcFileName), true, Option(path)))
@@ -47,9 +47,13 @@ object App {
         println(toJSON(new File(srcFileName), false, None))
         0
       case _ =>
-        println(usage)
+        Console.err.println(usage)
         1
     }
+  } catch {
+    case e: Throwable =>
+      Console.err.println(e.getMessage)
+      1
   }
 
   /** Standard runnable class entrypoint */
